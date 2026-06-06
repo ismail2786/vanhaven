@@ -9,11 +9,25 @@
 
 <header class="site-header">
     <div class="container">
-        <?php
-        wp_nav_menu([
-            'theme_location' => 'primary'
-        ]);
-        ?>
+        <div class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+            <?php
+                wp_nav_menu([
+                    'theme_location' => 'primary'
+                ]);
+            ?>
+        </div>
+        <div class="logo">
+            <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Van Haven Logo">
+            </a>
+        </div>
+        <div class="contact-us">
+            <a href="/contact" class="btn-outline">CONTACT US</a>
+        </div>
     </div>
 </header>
 
