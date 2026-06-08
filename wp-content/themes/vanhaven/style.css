@@ -78,11 +78,13 @@ body {
 }
 
 h1 {
+    color: var(--white);
     font-weight: 800;
     text-transform: uppercase;
 }
 
 p {
+    color: var(--white);
     font-weight: 400;
 }
 
@@ -93,6 +95,7 @@ p {
     --primary: #F37021;
     --background-color: #201F1F;
     --white: #F5F3F3;
+    --black: #2A2A2A;
 }
 
 
@@ -311,6 +314,16 @@ p {
     color: #fff;
     text-decoration: none;
     text-transform: capitalize;
+    /* padding: 10px 20px;
+    border-radius: 4px; */
+}
+
+.menu-toggle .sub-menu li a:hover {
+    color: #fff !important;
+    background-color: var(--primary);
+    transition: all 0.3s ease;
+    /* padding: 10px 20px;
+    border-radius: 4px; */
 }
 
 
@@ -347,18 +360,115 @@ p {
     color: var(--primary);
 }
 
-/* Contact Button */
-.btn-outline {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 1px solid var(--primary);
+/* primary btn */
+
+.vh-btn-primary a{
     color: var(--white);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 14px;
     text-decoration: none;
-    border-radius: 4px;
-    transition: 0.3s;
+    text-transform: uppercase;
+    background-color: var(--primary);
 }
 
-.btn-outline:hover {
-    background: var(--primary);
+.vh-btn-primary a::after {
+    content: "↗";
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+
+/* white btn */
+
+.vh-btn-white a{
+    color: var(--black);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+}
+
+/* outline btn */
+
+.vh-btn-outline a{
     color: var(--white);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+}
+
+.vh-btn-outline a:hover {
+    color: var(--white);
+    background: var(--primary);
+    transition: all 0.3s ease;
+}
+
+/* BANNER SECTION */
+
+.vh-banner {
+    position: relative;
+    min-height: 80vh;
+}
+
+.vh-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,rgba(16, 15, 15, 0) -31.72%,rgba(16, 15, 15, 0.78) 33.7%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.vh-banner h1 {
+    z-index: 2;
+    font-size: 72px !important;
+    color: var(--white);
+    position: relative;
+    width: 70%;
+    margin: auto;
+    font-weight: 500;
+}
+
+.vh-banner p{
+    z-index: 2;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.vh-banner .vh-btn-primary,
+.vh-banner .vh-btn-white,
+.vh-banner .vh-btn-outline {
+    z-index: 2;
+    position: relative;
+}
+
+/* TAILORED SECTION */
+
+h2 {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.vh-image-text {
+    padding: 80px 0;
+}
+
+.vh-image-text p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
 }

@@ -25,7 +25,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Van Haven Logo">
             </a>
         </div>
-        <div class="contact-us">
+        <div class="vh-btn-outline">
             <a href="/contact" class="btn-outline">CONTACT US</a>
         </div>
     </div>
