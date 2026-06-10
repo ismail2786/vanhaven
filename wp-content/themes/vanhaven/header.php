@@ -13,12 +13,75 @@
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
+            <!-- <span class="menu">MENU</span> -->
 
-            <?php
-                wp_nav_menu([
-                    'theme_location' => 'primary'
-                ]);
-            ?>
+            <div class="accordion-wrapper">
+                <div class="header-accordion">
+                    <h4><a href="/">HOME</a></h4>
+                </div>
+                <div class="header-accordion">
+                    <h4>SHOWROOM</h4>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'showroom',
+                        'container'      => false,
+                        'menu_class'     => 'menu',
+                    ]);
+                    ?>
+                </div>
+                <div class="header-accordion">
+                    <h4>PARTS & SERVICES</h4>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'services',
+                        'container'      => false,
+                        'menu_class'     => 'menu',
+                    ]);
+                    ?>
+                </div>
+                <div class="header-accordion">
+                    <h4>MERCH</h4>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'merch',
+                        'container'      => false,
+                        'menu_class'     => 'menu',
+                    ]);
+                    ?>
+                </div>
+                <div class="header-accordion">
+                    <h4>ABOUT</h4>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'about',
+                        'container'      => false,
+                        'menu_class'     => 'menu',
+                    ]);
+                    ?>
+                </div>
+                <div class="header-accordion">
+                    <h4><a href="/contact">CONTACT</a></h4>
+                </div>
+                <div class="header-accordion">
+                    <h4>MORE</h4>
+                    <?php
+                    wp_nav_menu([
+                        'theme_location' => 'more',
+                        'container'      => false,
+                        'menu_class'     => 'menu',
+                    ]);
+                    ?>
+                </div>
+                <div class="header-accordion">
+                    <h4>FOLLOW US ON SOCIALS</h4>
+                </div>
+                <div class="header-socials">
+                    <a href="#" target="_blank" rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/assets/instagram.png" alt="Instagram"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/assets/facebook.png" alt="Facebook"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/assets/youtube.png" alt="YouTube"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
         </div>
         <div class="logo">
             <a href="<?php echo home_url(); ?>">

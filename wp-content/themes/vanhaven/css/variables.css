@@ -1,0 +1,18 @@
+/* colors */
+
+:root {
+    --primary: #F37021;
+    --background-color: #201F1F;
+    --white: #F5F3F3;
+    --black: #2A2A2A;
+    --gray: #B5B3B3;
+}
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

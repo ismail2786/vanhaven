@@ -1,0 +1,50 @@
+/* primary btn */
+
+.vh-btn-primary a{
+    color: var(--white);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--primary);
+}
+
+.vh-btn-primary a::after {
+    content: "↗";
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+
+/* white btn */
+
+.vh-btn-white a{
+    color: var(--black);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+}
+
+/* outline btn */
+
+.vh-btn-outline a{
+    color: var(--white);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+}
+
+.vh-btn-outline a:hover {
+    color: var(--white);
+    background: var(--primary);
+    transition: all 0.3s ease;
+}
