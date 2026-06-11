@@ -73,10 +73,206 @@
 }
 
 .vh-card h4{
-    font-size: 24px;
-    font-weight: 600;
     margin-bottom: 30px;
 }
+
+/* Utility Classes */
+
+.text-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.vh-section {
+    padding: 60px 0;
+}
+
+.vh-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.vh-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.vh-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+h2 span {
+    font-weight: 200;
+}
+
+.tailored-section .vh-btn-primary{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.start-journey .vh-card {
+    position: relative;
+}
+
+.start-journey .vh-card .directions {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.start-journey .vh-card-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.start-journey .vh-card p {
+    margin: 30px 0;
+    line-height: 32px;
+}
+
+.start-journey .vh-card a {
+    position: relative;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.start-journey .vh-card a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    background: url("https://vanhaven.techiebears.com/wp-content/uploads/2026/06/Group-4006.png") center center / contain no-repeat;
+}
+
+.start-journey .vh-card-icon h4 {
+    margin-bottom: 0 !important;
+}
+
+.start-journey .vh-card-icon img {
+    margin-bottom: 0 !important;
+}
+
+/* Define Your Journey Section */
+
+.define-your-journey .vh-grid-2{
+    gap: 20px;
+}
+
+.define-your-journey .card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.define-your-journey .card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s ease;
+}
+
+.define-your-journey .card:hover img{
+    transform:scale(1.1);
+}
+
+.define-your-journey .card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.3),
+        rgba(0,0,0,.1)
+    );
+    z-index:1;
+}
+
+.define-your-journey .card-content{
+    position:absolute;
+    left:25px;
+    right:25px;
+    bottom:25px;
+    z-index:2;
+}
+
+.define-your-journey .badge{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 40px;
+    color: var(--white);
+    border:1px solid var(--primary);
+    font-size:14px;
+    text-transform:uppercase;
+    background-color: #F5F3F314;
+    z-index: 2;
+    padding: 8px 16px;
+}
+
+.define-your-journey .arrow{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background: var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+    transition:.4s;
+}
+
+.define-your-journey .card:hover .arrow{
+    transform:rotate(90deg);
+    background-color: var(--white);
+}
+
+.define-your-journey .hover-content{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition: .5s ease;
+}
+
+.define-your-journey .card:hover .hover-content{
+    max-height:200px;
+    opacity:1;
+}
+
+.define-your-journey .card h4{
+    margin-bottom: 20px;
+}
+
+.define-your-journey .card p{
+    line-height: 24px;
+}
+
+.define-your-journey .vh-btn-primary{
+    margin-top: 30px;
+}
+
+.define-your-journey .vh-btn-primary a{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 
 /* Banner Responsive */
 
@@ -89,6 +285,7 @@
         font-size: 46px !important;
         width: 70%;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -108,6 +305,24 @@
         font-size: 26px !important;
         width: 100%;
     }
+
+    .vh-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 30px;
+    }
+
+    .vh-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vh-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vh-section {
+        padding: 40px 0;
+    }
 }
 
 @media (max-width: 425px) {
@@ -118,4 +333,49 @@
     h2 {
         font-size: 26px;
     }
+
+    .vh-grid-3 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .vh-grid-4 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .define-your-journey .arrow {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .define-your-journey .badge {
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+    }
+
+    .define-your-journey .card-content {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .define-your-journey .vh-btn-primary a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .define-your-journey .card h4 {
+        margin-bottom: 0px;
+    }
+
+    .define-your-journey .card p {
+        line-height: 16px;
+    }
+
+    .define-your-journey .vh-btn-primary {
+        margin-top: 10px;
+    }
+
 }
