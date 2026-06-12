@@ -55,7 +55,6 @@
 /* Cards */
 
 .vh-card {
-    border: Mixed solid;
     padding: 20px;
     background-color: #7B7B7B29;
     border-radius: 6px;
@@ -332,6 +331,7 @@ h2 span {
 
     h2 {
         font-size: 26px;
+        margin-bottom: 20px;
     }
 
     .vh-grid-3 {

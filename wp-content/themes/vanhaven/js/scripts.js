@@ -61,3 +61,24 @@ menuToggle.addEventListener('click', (e) => {
         });
     }
 });
+
+// accordion
+
+document.querySelectorAll('.vh-question').forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        const current = this.closest('.vh-item');
+
+        document.querySelectorAll('.vh-item').forEach(item => {
+
+            if (item !== current) {
+                item.classList.remove('active');
+            }
+
+        });
+
+        current.classList.toggle('active');
+    });
+
+});

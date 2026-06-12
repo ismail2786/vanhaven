@@ -51,3 +51,88 @@ register_nav_menus(
     ) 
 
 );
+
+
+/**
+ * Theme Setup
+ */
+function vh_theme_setup() {
+
+    add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
+
+}
+add_action('after_setup_theme', 'vh_theme_setup');
+
+
+/**
+ * Gallery CPT
+ */
+function vh_register_gallery_cpt() {
+
+    $args = array(
+
+        'labels' => array(
+            'name'               => 'Gallery',
+            'singular_name'      => 'Gallery',
+            'add_new_item'       => 'Add New Gallery',
+            'edit_item'          => 'Edit Gallery',
+            'view_item'          => 'View Gallery',
+        ),
+
+        'public'              => true,
+        'show_in_rest'        => true,
+        'has_archive'         => true,
+        'menu_icon'           => 'dashicons-format-gallery',
+
+        'rewrite' => array(
+            'slug' => 'gallery'
+        ),
+
+        'supports' => array(
+            'title',
+            'thumbnail'
+        ),
+
+    );
+
+    register_post_type('gallery', $args);
+
+}
+add_action('init', 'vh_register_gallery_cpt');
+
+
+/**
+ * Gallery Tags
+ */
+function vh_register_gallery_tags() {
+
+    register_taxonomy(
+        'gallery_tags',
+        'gallery',
+        array(
+
+            'labels' => array(
+                'name'          => 'Gallery Tags',
+                'singular_name' => 'Gallery Tag',
+            ),
+
+            'hierarchical' => false,
+            'show_in_rest' => true,
+
+        )
+    );
+
+}
+add_action('init', 'vh_register_gallery_tags');
+
+function vh_gallery_section_shortcode() {
+
+    ob_start();
+
+    get_template_part('template-parts/gallery-section');
+
+    return ob_get_clean();
+}
+
+add_shortcode('vh_gallery', 'vh_gallery_section_shortcode');
