@@ -1,0 +1,136 @@
+/* VanHaven Handovers Gallery — frontend styles */
+
+.vhhg {
+	--vhhg-accent: #F37021;
+	--vhhg-bg: #201F1F;
+	--vhhg-card: #2A2A2A;
+	--vhhg-text: #F5F3F3;
+	--vhhg-muted: #B5B3B3;
+	--vhhg-radius: 6px;
+	--vhhg-gap: 20px;
+}
+
+.vhhg *, .vhhg *::before, .vhhg *::after { box-sizing: border-box; }
+
+/* ---- Viewport + scrolling grid ---- */
+.vhhg__viewport { position: relative; }
+
+.vhhg__grid {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-rows: repeat(var(--vhhg-rows), 1fr);
+	grid-auto-columns: minmax(260px, 1fr);
+	gap: var(--vhhg-gap);
+	overflow-x: auto;
+	scroll-snap-type: x proximity;
+	scrollbar-width: none;
+	cursor: grab;
+	padding-bottom: 4px;
+}
+
+.vhhg__grid::-webkit-scrollbar { display: none; }
+.vhhg__grid.is-grabbing { cursor: grabbing; user-select: none; }
+
+/* On wide screens show ~3 columns per page */
+@media ( min-width: 900px ) {
+	.vhhg__grid {
+		grid-auto-columns: calc( ( 100% - 2 * var(--vhhg-gap) ) / 3 );
+	}
+	.vhhg__tile { scroll-snap-align: start; }
+}
+
+/* ---- Tile ---- */
+.vhhg__tile {
+	position: relative;
+	margin: 0;
+	border-radius: var(--vhhg-radius);
+	overflow: hidden;
+	aspect-ratio: 4 / 3;
+	background: #232325;
+	border: 1px solid rgba( 255, 255, 255, 0.06 );
+}
+
+.vhhg__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.5s ease;
+}
+
+.vhhg__tile:hover .vhhg__img { transform: scale( 1.04 ); }
+
+.vhhg__badge {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	z-index: 2;
+	padding: 8px 16px;
+    border-radius: 40px;
+    border: 1px solid var(--primary);
+    background: #F5F3F314;
+    color: var(--white);
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Nav ---- */
+.vhhg__nav {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.vhhg__btn {
+	width: 46px;
+	height: 46px;
+	border-radius: 999px;
+	border: 1px solid var(--vhhg-accent);
+	background: transparent;
+	color: var(--vhhg-text);
+	font-size: 1.1rem;
+	cursor: pointer;
+	display: grid;
+	place-items: center;
+	transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.vhhg__btn--next { background: var(--vhhg-accent); color: #fff; border-color: var(--vhhg-accent); }
+.vhhg__btn:hover:not(:disabled) { filter: brightness( 1.1 ); }
+.vhhg__btn:disabled { opacity: 0.35; cursor: default; }
+
+.vhhg__btn:focus-visible {
+	outline: 2px solid var(--vhhg-accent);
+	outline-offset: 3px;
+}
+
+/* ---- Empty / editor ---- */
+.vhhg--empty p {
+	color: var(--vhhg-muted);
+	text-align: center;
+	padding: 2rem 0;
+	margin: 0;
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.vhhg__grid { scroll-behavior: auto; }
+	.vhhg__img { transition: none; }
+}
+
+@media ( max-width: 781px ) {
+	.vhhg__grid { grid-auto-columns: 80%; }
+	.vhhg__head { flex-direction: column; }
+}
+
+@media ( max-width: 425px ) {
+	.vhhg__badge {
+		top: 8px;
+    	left: 8px;
+		padding: 4px 8px;
+		border-radius: 40px;
+		font-size: 10px;
+	}
+}

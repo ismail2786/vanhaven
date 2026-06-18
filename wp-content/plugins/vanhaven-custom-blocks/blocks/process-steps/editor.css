@@ -1,0 +1,36 @@
+/* VH Process Steps — editor-only styles */
+
+.vhps--editor .vhps__step--edit { position: relative; }
+
+.vhps__edit-toolbar {
+	display: flex;
+	justify-content: flex-end;
+	gap: 2px;
+	margin-bottom: 6px;
+}
+
+.vhps--editor .vhps__step-title { color: #fff; }
+.vhps--editor .vhps__step-desc { color: #cfcfd4; }
+
+.vhps__num-edit {
+	margin-top: 10px;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	padding-top: 8px;
+}
+.vhps__num-edit summary {
+	cursor: pointer;
+	color: #9a9aa0;
+	font-size: 12px;
+	margin-bottom: 6px;
+}
+
+.vhps__add-wrap {
+	margin-top: 16px;
+	display: flex;
+	justify-content: center;
+}
+
+.vhps--editor .components-text-control__input {
+	background: #fff;
+	color: #1e1e1e;
+}

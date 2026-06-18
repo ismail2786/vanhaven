@@ -1,90 +1,19 @@
-.home-faq .vh-grid-2 {
-    gap: 20px;
-    align-items: baseline;
+.uagb-block-6xhhdyk9 .uagb-faq-item {
+    border: 1px solid #7B7B7B29;
 }
 
-.vh-faq-col{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
+.uagb-block-6xhhdyk9 .uagb-faq-item .uagb-faq-content,
+.uagb-block-31c9eb90 .uagb-faq-item .uagb-faq-content {
+    background-color: rgba(123, 123, 123, 0.16);
 }
 
-.vh-item {
-    background-color: var(--background-color);
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 8px;
-    overflow: hidden;
-    transition:
-        border-color .35s ease,
-        box-shadow .35s ease,
-        transform .25s ease;
-}
-
-.vh-question {
-    width: 100%;
-    background: none;
-    border: 0;
-    padding: 22px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    text-align: left;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--white);
-    font-family: 'Blauer Nue', sans-serif;
-}
-
-/* Circle Button */
-.vh-question::after {
-    content: "↗";
-
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #F37021;
-    color: #F5F3F3;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition: all .35s ease;
-}
-
-/* Active Circle */
-.vh-item.active .vh-question::after {
-    background: transparent;
-    border: 1px solid var(--white);
-    transform: rotate(90deg);
-}
-
-/* Smooth Content Animation */
-.vh-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 20px;
+.uagb-faq-questions .uagb-icon {
+    transform: rotate(230deg);
     transition: all 0.3s ease;
 }
 
-.vh-item.active .vh-answer {
-    max-height: 250px;
-    padding: 0 20px 20px;
-}
-
-.vh-answer p {
-    margin: 0;
-    color: var(--gray);
-    font-size: 15px;
-    line-height: 1.8;
-    font-family: 'Blauer Nue', sans-serif;
+.uagb-faq-questions .uagb-icon-active {
+    transform: rotate(145deg);
+    background-color: transparent !important;
+    border: 1px solid #F5F3F3 !important;
 }

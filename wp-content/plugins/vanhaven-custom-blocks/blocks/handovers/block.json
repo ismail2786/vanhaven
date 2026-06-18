@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vanhaven/handovers",
+	"version": "1.0.0",
+	"title": "VH Van Handovers",
+	"category": "vanhaven",
+	"icon": "format-gallery",
+	"description": "A dark, multi-row gallery carousel of customer handover photos with tag/badge overlays. Manage images under Handovers in the admin.",
+	"keywords": [ "gallery", "handover", "carousel", "kadence", "vanhaven" ],
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"color": { "background": true, "text": false }
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "The Moment Your New Chapter Begins"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "Explore our recent handovers and see the passion behind every bespoke build as it meets its new owner and takes to the open road."
+		},
+		"limit": { "type": "number", "default": 12 },
+		"rows": { "type": "number", "default": 2 },
+		"accentColor": { "type": "string", "default": "#F0651F" }
+	},
+	"textdomain": "vanhaven-handovers",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css",
+	"viewScript": "file:./view.js"
+}

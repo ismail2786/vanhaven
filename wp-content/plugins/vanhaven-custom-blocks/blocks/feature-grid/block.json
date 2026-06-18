@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vanhaven/feature-grid",
+	"version": "1.0.0",
+	"title": "VH Feature Grid",
+	"category": "vanhaven",
+	"icon": "screenoptions",
+	"description": "A flexible grid of icon cards with heading, description, and optional key-value rows or a link. Covers feature lists, value props, spec cards and contact cards.",
+	"keywords": [ "features", "grid", "cards", "icons", "vanhaven", "vh" ],
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"color": { "background": true, "text": false }
+	},
+	"attributes": {
+		"heading": { "type": "string", "default": "" },
+		"subheading": { "type": "string", "default": "" },
+		"columns": { "type": "number", "default": 3 },
+		"iconStyle": { "type": "string", "default": "filled" },
+		"accentColor": { "type": "string", "default": "#F0651F" },
+		"cards": {
+			"type": "array",
+			"default": [
+				{
+					"icon": "shield",
+					"title": "3-Year Coverage",
+					"description": "Comprehensive protection on all bespoke conversions, ensuring your peace of mind for miles to come.",
+					"rows": [
+						{ "label": "Type", "value": "Full Conversion" },
+						{ "label": "Duration", "value": "36 Months" }
+					],
+					"linkText": "",
+					"linkUrl": ""
+				}
+			]
+		}
+	},
+	"textdomain": "vanhaven-custom-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css"
+}

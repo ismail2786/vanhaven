@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vanhaven/process-steps",
+	"version": "1.0.0",
+	"title": "VH Process Steps",
+	"category": "vanhaven",
+	"icon": "editor-ol",
+	"description": "Numbered process / timeline steps (01, 02, 03...) with title and description. Great for 'how it works' and build-process sections.",
+	"keywords": [ "steps", "process", "timeline", "numbered", "vanhaven", "vh" ],
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"color": { "background": true, "text": false }
+	},
+	"attributes": {
+		"heading": { "type": "string", "default": "" },
+		"subheading": { "type": "string", "default": "" },
+		"columns": { "type": "number", "default": 4 },
+		"zeroPad": { "type": "boolean", "default": true },
+		"accentColor": { "type": "string", "default": "#F0651F" },
+		"steps": {
+			"type": "array",
+			"default": [
+				{ "number": "", "title": "Visionary Planning", "description": "Defining the blueprint through precision CAD design and curated material selection." },
+				{ "number": "", "title": "Clean Slate", "description": "Disassembling the base vehicle with absolute care to prepare the canvas for transformation." },
+				{ "number": "", "title": "Bespoke Assembly", "description": "Integrating premium upholstery, advanced electronics, and performance upgrades." },
+				{ "number": "", "title": "Elite Certification", "description": "A rigorous multi-point inspection to guarantee safety, luxury, and flawless performance." }
+			]
+		}
+	},
+	"textdomain": "vanhaven-custom-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css"
+}

@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vanhaven/van-gallery",
+	"version": "1.0.0",
+	"title": "VH Gallery with Filters",
+	"category": "vanhaven",
+	"icon": "images-alt2",
+	"description": "A filterable gallery from VanHaven → Van Gallery. Category tabs (with thumbnails), a Photos/Videos toggle, a sort dropdown, click-to-zoom lightbox, a 'Showing X of Y' counter and a Load More button.",
+	"keywords": [ "gallery", "filters", "lightbox", "video", "vanhaven", "vh" ],
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"color": { "background": true, "text": false }
+	},
+	"attributes": {
+		"perPage": { "type": "number", "default": 10 },
+		"accentColor": { "type": "string", "default": "#F0651F" },
+		"showVideoToggle": { "type": "boolean", "default": true },
+		"showSort": { "type": "boolean", "default": true }
+	},
+	"textdomain": "vanhaven-custom-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css",
+	"viewScript": "file:./view.js"
+}

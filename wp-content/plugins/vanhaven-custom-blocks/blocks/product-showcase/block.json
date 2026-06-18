@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vanhaven/product-showcase",
+	"version": "1.0.0",
+	"title": "VH Product Showcase",
+	"category": "vanhaven",
+	"icon": "slides",
+	"description": "Tabbed WooCommerce product showcase slider. Pick product categories as tabs; products render in a premium dark slider.",
+	"keywords": [ "woocommerce", "products", "tabs", "slider", "showcase", "kadence" ],
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"color": {
+			"background": true,
+			"text": false
+		}
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Premium Builds & Performance Parts"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "Explore our current showroom of elite custom vans or upgrade your own with our curated selection of high-end parts."
+		},
+		"categories": {
+			"type": "array",
+			"default": []
+		},
+		"limit": {
+			"type": "number",
+			"default": 8
+		},
+		"ctaLabel": {
+			"type": "string",
+			"default": "View Details"
+		},
+		"badgeMetaKey": {
+			"type": "string",
+			"default": ""
+		},
+		"accentColor": {
+			"type": "string",
+			"default": "#F0651F"
+		}
+	},
+	"textdomain": "vanhaven-showcase",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css",
+	"viewScript": "file:./view.js"
+}

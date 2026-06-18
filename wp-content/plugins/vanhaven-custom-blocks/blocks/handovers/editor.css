@@ -1,0 +1,6 @@
+/* Editor-only tweaks for handovers gallery */
+.vhhg--editor .vhhg__grid {
+	cursor: default;
+	overflow-x: auto;
+}
+.editor-styles-wrapper .vhhg--editor { border-radius: 8px; }

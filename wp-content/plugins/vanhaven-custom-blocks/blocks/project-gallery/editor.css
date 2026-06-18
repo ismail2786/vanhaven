@@ -1,0 +1,5 @@
+/* VH Project Gallery — editor-only styles */
+.vhpg--editor .vhpg__tile { cursor: default; }
+.vhpg--editor .vhpg__zoom { opacity: 1; transform: none; }
+.vhpg--editor .vhpg__more { cursor: default; opacity: 0.7; }
+.editor-styles-wrapper .vhpg--editor { border-radius: 8px; }

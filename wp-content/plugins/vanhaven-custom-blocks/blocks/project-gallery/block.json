@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vanhaven/project-gallery",
+	"version": "1.0.0",
+	"title": "VH Project Gallery",
+	"category": "vanhaven",
+	"icon": "format-gallery",
+	"description": "A mosaic project gallery that fetches images from VanHaven → Projects. Click any image for a magnified lightbox; Load More button with a 'Showing X of Y' counter.",
+	"keywords": [ "gallery", "projects", "lightbox", "masonry", "vanhaven", "vh" ],
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true },
+		"color": { "background": true, "text": false }
+	},
+	"attributes": {
+		"heading": { "type": "string", "default": "Precision In Every Microscopic Detail" },
+		"subheading": { "type": "string", "default": "Explore the artistry behind VSO. From hand-stitched leather to CNC-machined components, excellence is found in the smallest finishes." },
+		"perPage": { "type": "number", "default": 5 },
+		"accentColor": { "type": "string", "default": "#F0651F" }
+	},
+	"textdomain": "vanhaven-custom-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css",
+	"viewScript": "file:./view.js"
+}

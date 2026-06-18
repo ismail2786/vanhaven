@@ -1,0 +1,4 @@
+/* Editor-only tweaks */
+.vhs--editor .vhs__cta { cursor: default; }
+.editor-styles-wrapper .vhs--editor { border-radius: 8px; }
+.vhs__track--editor .vhs__slide { display: block; }

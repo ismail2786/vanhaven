@@ -1,0 +1,8 @@
+/* VH Gallery with Filters — editor-only styles */
+.vhvg--editor .vhvg__tile,
+.vhvg--editor .vhvg__cat,
+.vhvg--editor .vhvg__type,
+.vhvg--editor .vhvg__more { cursor: default; }
+.vhvg--editor .vhvg__zoom { opacity: 1; }
+.vhvg--editor .vhvg__more { opacity: 0.7; }
+.editor-styles-wrapper .vhvg--editor { border-radius: 8px; }

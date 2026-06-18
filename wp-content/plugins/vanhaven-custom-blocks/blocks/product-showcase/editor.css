@@ -1,0 +1,19 @@
+/* Editor-only overrides for VanHaven Product Showcase */
+
+.vhsc--editor {
+	pointer-events: auto;
+}
+
+.vhsc--editor .vhsc__rail {
+	cursor: default;
+	overflow-x: auto;
+}
+
+.vhsc--editor .vhsc__cta {
+	cursor: default;
+}
+
+/* Make the preview feel contained in the editor canvas */
+.editor-styles-wrapper .vhsc--editor {
+	border-radius: 8px;
+}

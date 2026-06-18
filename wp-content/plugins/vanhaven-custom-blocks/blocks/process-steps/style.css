@@ -1,0 +1,84 @@
+/* VH Process Steps — frontend styles */
+
+.vhps {
+	--vhps-accent: #f0651f;
+	--vhps-bg: #1c1c1e;
+	--vhps-card: #232325;
+	--vhps-text: #f4f4f5;
+	--vhps-muted: #9a9aa0;
+	--vhps-radius: 12px;
+	background: var(--vhps-bg);
+	color: var(--vhps-text);
+	padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
+	box-sizing: border-box;
+}
+
+.vhps *, .vhps *::before, .vhps *::after { box-sizing: border-box; }
+
+.vhps__head { margin-bottom: 2rem; }
+.vhps__title {
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	margin: 0 0 0.5rem;
+}
+.vhps__sub { color: var(--vhps-muted); margin: 0; max-width: 60ch; }
+
+.vhps__grid {
+	display: grid;
+	gap: clamp(16px, 2vw, 24px);
+	grid-template-columns: repeat(4, 1fr);
+}
+.vhps--cols-2 .vhps__grid { grid-template-columns: repeat(2, 1fr); }
+.vhps--cols-3 .vhps__grid { grid-template-columns: repeat(3, 1fr); }
+
+.vhps__step {
+	background: var(--vhps-card);
+	border: 1px solid rgba( 255, 255, 255, 0.07 );
+	border-radius: var(--vhps-radius);
+	padding: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.vhps__num {
+	display: block;
+	font-size: clamp(2rem, 4vw, 2.75rem);
+	font-weight: 800;
+	line-height: 1;
+	color: var(--vhps-accent);
+	margin-bottom: 0.75rem;
+	letter-spacing: 0.02em;
+}
+
+.vhps__step-title {
+	font-size: 1.05rem;
+	font-weight: 700;
+	margin: 0 0 0.6rem;
+}
+
+.vhps__step-desc {
+	color: var(--vhps-muted);
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.vhps--empty p { color: var(--vhps-muted); text-align: center; padding: 2rem 0; margin: 0; }
+
+@media ( max-width: 900px ) {
+	.vhps {
+		padding: clamp(1.5rem, 6vw, 2.5rem) 1.25rem;
+	}
+	.vhps__grid,
+	.vhps--cols-3 .vhps__grid,
+	.vhps--cols-4 .vhps__grid { grid-template-columns: repeat(2, 1fr); }
+	.vhps__head { margin-bottom: 1.5rem; }
+}
+@media ( max-width: 560px ) {
+	.vhps__grid,
+	.vhps--cols-2 .vhps__grid,
+	.vhps--cols-3 .vhps__grid,
+	.vhps--cols-4 .vhps__grid { grid-template-columns: 1fr; }
+	.vhps__step { padding: 1.25rem; }
+	.vhps__num { font-size: 2.25rem; }
+}

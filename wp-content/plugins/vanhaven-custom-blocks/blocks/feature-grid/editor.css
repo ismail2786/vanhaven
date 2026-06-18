@@ -1,0 +1,59 @@
+/* VH Feature Grid — editor-only styles for the inline repeater */
+
+.vhfg--editor .vhfg__card--edit { position: relative; }
+
+.vhfg__edit-toolbar {
+	display: flex;
+	justify-content: flex-end;
+	gap: 2px;
+	margin-bottom: 6px;
+}
+
+.vhfg__icon-edit {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+.vhfg__icon-edit .components-base-control { margin-bottom: 0; flex: 1; }
+.vhfg__icon-edit .components-select-control__input { min-height: 30px; }
+
+.vhfg--editor .vhfg__card-title { color: #fff; }
+.vhfg--editor .vhfg__card-desc { color: #cfcfd4; }
+
+.vhfg__rows-edit { margin-top: 12px; }
+.vhfg__row-edit {
+	display: grid;
+	grid-template-columns: 1fr 1fr auto;
+	gap: 6px;
+	align-items: center;
+	margin-bottom: 6px;
+}
+.vhfg__row-edit .components-base-control { margin-bottom: 0; }
+
+.vhfg__add-row { margin-top: 4px; }
+
+.vhfg__link-edit {
+	margin-top: 12px;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	padding-top: 8px;
+}
+.vhfg__link-edit summary {
+	cursor: pointer;
+	color: #9a9aa0;
+	font-size: 12px;
+	margin-bottom: 6px;
+}
+
+.vhfg__add-card-wrap {
+	margin-top: 16px;
+	display: flex;
+	justify-content: center;
+}
+
+/* Make editor text inputs readable on the dark card */
+.vhfg--editor .components-text-control__input,
+.vhfg--editor .components-select-control__input {
+	background: #fff;
+	color: #1e1e1e;
+}
