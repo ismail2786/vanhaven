@@ -1,96 +1,270 @@
-const menuToggle = document.querySelector('.menu-toggle');
+// document.addEventListener('DOMContentLoaded', () => {
 
-menuToggle.addEventListener('click', (e) => {
+//     const menuToggle = document.querySelector('.menu-toggle');
+//     const accordionWrapper = document.querySelector('.accordion-wrapper');
 
-    const header = e.target.closest('.header-accordion h4');
+//     /*
+//     ----------------------------
+//     OPEN / CLOSE HAMBURGER
+//     ----------------------------
+//     */
 
-    if (header) {
-        const currentAccordion = header.closest('.header-accordion');
+//     menuToggle.addEventListener('click', function(e) {
 
-        document.querySelectorAll('.header-accordion').forEach(accordion => {
-            if (accordion !== currentAccordion) {
-                accordion.classList.remove('active');
-            }
-        });
+//         if (
+//             e.target.closest('.header-accordion') ||
+//             e.target.closest('.menu')
+//         ) {
+//             return;
+//         }
 
-        currentAccordion.classList.toggle('active');
-        return;
-    }
+//         menuToggle.classList.toggle('active');
+//         document.body.classList.toggle('menu-open');
 
-    if (e.target.closest('a')) {
-        return;
-    }
+//         if (!menuToggle.classList.contains('active')) {
 
-    menuToggle.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
+//             accordionWrapper.classList.remove('submenu-open');
 
-    // Close accordions when menu closes
-    if (!menuToggle.classList.contains('active')) {
-        document.querySelectorAll('.header-accordion').forEach(accordion => {
-            accordion.classList.remove('active');
-        });
-    }
-});
+//             document.querySelectorAll('.menu.active').forEach(menu => {
+//                 menu.classList.remove('active');
+//             });
 
-// accordion
+//             document.querySelectorAll('.active-parent').forEach(item => {
+//                 item.classList.remove('active-parent');
+//             });
+//         }
+//     });
 
-document.querySelectorAll('.vh-question').forEach(button => {
+//     /*
+//     ----------------------------
+//     MOBILE ONLY
+//     ----------------------------
+//     */
 
-    button.addEventListener('click', function () {
+//     if (window.innerWidth <= 992) {
 
-        const current = this.closest('.vh-item');
+//         document.querySelectorAll('.header-accordion').forEach(accordion => {
 
-        document.querySelectorAll('.vh-item').forEach(item => {
+//             const heading = accordion.querySelector('h4');
+//             const submenu = accordion.querySelector('.menu');
 
-            if (item !== current) {
-                item.classList.remove('active');
-            }
+//             if (!submenu || !heading.querySelector('a') === false) return;
 
-        });
+//             /*
+//             ----------------------------
+//             CREATE BACK BUTTON
+//             ----------------------------
+//             */
 
-        current.classList.toggle('active');
+//             const parentTitle = heading.textContent.trim();
+
+//             submenu.insertAdjacentHTML(
+//                 'afterbegin',
+//                 `
+//                 <li class="menu-back">Back</li>
+//                 <li class="submenu-title">${parentTitle}</li>
+//                 `
+//             );
+
+//             /*
+//             ----------------------------
+//             OPEN SUBMENU
+//             ----------------------------
+//             */
+
+//             heading.addEventListener('click', function(e) {
+
+//                 if (heading.querySelector('a')) return;
+
+//                 e.preventDefault();
+
+//                 accordionWrapper.classList.add('submenu-open');
+
+//                 accordion.classList.add('active-parent');
+
+//                 submenu.classList.add('active');
+//             });
+//         });
+
+//         /*
+//         ----------------------------
+//         BACK BUTTON
+//         ----------------------------
+//         */
+
+//         document.addEventListener('click', function(e) {
+
+//             const backBtn = e.target.closest('.menu-back');
+
+//             if (!backBtn) return;
+
+//             const submenu = backBtn.closest('.menu');
+
+//             submenu.classList.remove('active');
+
+//             accordionWrapper.classList.remove('submenu-open');
+
+//             document
+//                 .querySelectorAll('.active-parent')
+//                 .forEach(item => item.classList.remove('active-parent'));
+//         });
+//     }
+// });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const accordionWrapper = document.querySelector('.accordion-wrapper');
+
+    /*
+    ============================
+    HAMBURGER OPEN / CLOSE
+    ============================
+    */
+
+    menuToggle.addEventListener('click', function(e) {
+
+        // Ignore clicks inside menu content
+        if (
+            e.target.closest('.header-accordion') ||
+            e.target.closest('.menu')
+        ) {
+            return;
+        }
+
+        menuToggle.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+
+        // Reset everything when closing menu
+        if (!menuToggle.classList.contains('active')) {
+
+            accordionWrapper.classList.remove('submenu-open');
+
+            document.querySelectorAll('.menu.active').forEach(menu => {
+                menu.classList.remove('active');
+            });
+
+            document.querySelectorAll('.header-accordion').forEach(acc => {
+                acc.classList.remove('active');
+                acc.classList.remove('active-parent');
+            });
+        }
     });
 
-});
+    /*
+    ============================
+    MENU ITEMS
+    ============================
+    */
 
-/* Gallery */
+    document.querySelectorAll('.header-accordion').forEach(accordion => {
 
-document.addEventListener('DOMContentLoaded', function () {
+        const heading = accordion.querySelector('h4');
+        const submenu = accordion.querySelector('.menu');
 
-    if (typeof Swiper === 'undefined') {
-        return;
-    }
+        // Skip items without submenu
+        if (!submenu) return;
 
-    if (window.innerWidth > 767) {
+        /*
+        ============================
+        CREATE BACK BUTTON ON MOBILE
+        ============================
+        */
 
-        new Swiper('.vh-gallery-slider', {
+        if (window.innerWidth <= 992) {
 
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
+            const parentTitle = heading.textContent.trim();
 
-            navigation: {
-                nextEl: '.vh-next',
-                prevEl: '.vh-prev'
+            if (!submenu.querySelector('.menu-back')) {
+
+                submenu.insertAdjacentHTML(
+                    'afterbegin',
+                    `
+                    <li class="menu-back">Back</li>
+                    <li class="submenu-title">${parentTitle}</li>
+                    `
+                );
+            }
+        }
+
+        /*
+        ============================
+        CLICK MENU TITLE
+        ============================
+        */
+
+        heading.addEventListener('click', function(e) {
+
+            // Allow normal links (HOME, CONTACT etc)
+            if (heading.querySelector('a')) {
+                return;
             }
 
-        });
+            e.preventDefault();
 
-    } else {
+            /*
+            ============================
+            MOBILE
+            ============================
+            */
 
-        new Swiper('.vh-gallery-mobile', {
+            if (window.innerWidth <= 992) {
 
-            slidesPerView: 1.15,
-            spaceBetween: 20,
-            loop: true,
+                accordionWrapper.classList.add('submenu-open');
 
-            navigation: {
-                nextEl: '.vh-next',
-                prevEl: '.vh-prev'
+                document.querySelectorAll('.active-parent').forEach(item => {
+                    item.classList.remove('active-parent');
+                });
+
+                document.querySelectorAll('.menu.active').forEach(menu => {
+                    menu.classList.remove('active');
+                });
+
+                accordion.classList.add('active-parent');
+                submenu.classList.add('active');
+
+                return;
             }
 
-        });
+            /*
+            ============================
+            DESKTOP
+            ============================
+            */
 
-    }
+            document.querySelectorAll('.header-accordion').forEach(acc => {
+
+                if (acc !== accordion) {
+                    acc.classList.remove('active');
+                }
+            });
+
+            accordion.classList.toggle('active');
+        });
+    });
+
+    /*
+    ============================
+    MOBILE BACK BUTTON
+    ============================
+    */
+
+    document.addEventListener('click', function(e) {
+
+        const backBtn = e.target.closest('.menu-back');
+
+        if (!backBtn) return;
+
+        const submenu = backBtn.closest('.menu');
+
+        submenu.classList.remove('active');
+
+        accordionWrapper.classList.remove('submenu-open');
+
+        document.querySelectorAll('.active-parent').forEach(item => {
+            item.classList.remove('active-parent');
+        });
+    });
 
 });

@@ -1,51 +1,17 @@
 /* VH Project Gallery — frontend styles */
 
 .vhpg {
-	--vhpg-accent: #f0651f;
-	--vhpg-bg: #1c1c1e;
-	--vhpg-card: #232325;
-	--vhpg-text: #f4f4f5;
-	--vhpg-muted: #9a9aa0;
-	--vhpg-radius: 10px;
-	--vhpg-gap: 12px;
-	background: var(--vhpg-bg);
-	color: var(--vhpg-text);
-	padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
-	box-sizing: border-box;
+	--vhpg-accent: #F37021;
+	--vhpg-bg: #201F1F;
+	--vhpg-card: #2A2A2A;
+	--vhpg-text: #F5F3F3;
+	--vhpg-muted: #B5B3B3;
+	--vhpg-radius: 6px;
+	--vhpg-gap: 10px;
 }
 
 .vhpg *, .vhpg *::before, .vhpg *::after { box-sizing: border-box; }
 
-/* ---- Head ---- */
-.vhpg__head {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 1.5rem;
-	margin-bottom: 1.75rem;
-}
-.vhpg__title {
-	font-size: clamp(1.5rem, 3vw, 2.4rem);
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
-	line-height: 1.1;
-	margin: 0;
-	max-width: 18ch;
-}
-.vhpg__sub {
-	color: var(--vhpg-muted);
-	font-size: 0.95rem;
-	line-height: 1.6;
-	max-width: 44ch;
-	margin: 0;
-}
-
-/* ---- Mosaic grid ----
-   12-column grid. The first tile spans 6 cols & 2 rows (tall hero);
-   the rest fill 6 cols each in a 3-row rhythm, recreating the reference mosaic.
-*/
 .vhpg__grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -123,17 +89,16 @@
 .vhpg__count span { color: var(--vhpg-text); font-weight: 700; }
 
 .vhpg__more {
-	background: var(--vhpg-accent);
-	color: #fff;
-	border: 0;
-	font-size: 0.78rem;
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	padding: 0.85rem 2rem;
-	border-radius: 8px;
+    font-size: 14px;
 	cursor: pointer;
-	transition: filter 0.2s ease, transform 0.1s ease;
+    border-radius: 6px;
+    padding: 12px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    font-family: 'Blauer Nue';
+    font-weight: 400; 
+	border: 1px solid var(--primary);
 }
 .vhpg__more:hover { filter: brightness( 1.1 ); }
 .vhpg__more:active { transform: translateY( 1px ); }
