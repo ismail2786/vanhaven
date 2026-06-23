@@ -1,117 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
-
-//     const menuToggle = document.querySelector('.menu-toggle');
-//     const accordionWrapper = document.querySelector('.accordion-wrapper');
-
-//     /*
-//     ----------------------------
-//     OPEN / CLOSE HAMBURGER
-//     ----------------------------
-//     */
-
-//     menuToggle.addEventListener('click', function(e) {
-
-//         if (
-//             e.target.closest('.header-accordion') ||
-//             e.target.closest('.menu')
-//         ) {
-//             return;
-//         }
-
-//         menuToggle.classList.toggle('active');
-//         document.body.classList.toggle('menu-open');
-
-//         if (!menuToggle.classList.contains('active')) {
-
-//             accordionWrapper.classList.remove('submenu-open');
-
-//             document.querySelectorAll('.menu.active').forEach(menu => {
-//                 menu.classList.remove('active');
-//             });
-
-//             document.querySelectorAll('.active-parent').forEach(item => {
-//                 item.classList.remove('active-parent');
-//             });
-//         }
-//     });
-
-//     /*
-//     ----------------------------
-//     MOBILE ONLY
-//     ----------------------------
-//     */
-
-//     if (window.innerWidth <= 992) {
-
-//         document.querySelectorAll('.header-accordion').forEach(accordion => {
-
-//             const heading = accordion.querySelector('h4');
-//             const submenu = accordion.querySelector('.menu');
-
-//             if (!submenu || !heading.querySelector('a') === false) return;
-
-//             /*
-//             ----------------------------
-//             CREATE BACK BUTTON
-//             ----------------------------
-//             */
-
-//             const parentTitle = heading.textContent.trim();
-
-//             submenu.insertAdjacentHTML(
-//                 'afterbegin',
-//                 `
-//                 <li class="menu-back">Back</li>
-//                 <li class="submenu-title">${parentTitle}</li>
-//                 `
-//             );
-
-//             /*
-//             ----------------------------
-//             OPEN SUBMENU
-//             ----------------------------
-//             */
-
-//             heading.addEventListener('click', function(e) {
-
-//                 if (heading.querySelector('a')) return;
-
-//                 e.preventDefault();
-
-//                 accordionWrapper.classList.add('submenu-open');
-
-//                 accordion.classList.add('active-parent');
-
-//                 submenu.classList.add('active');
-//             });
-//         });
-
-//         /*
-//         ----------------------------
-//         BACK BUTTON
-//         ----------------------------
-//         */
-
-//         document.addEventListener('click', function(e) {
-
-//             const backBtn = e.target.closest('.menu-back');
-
-//             if (!backBtn) return;
-
-//             const submenu = backBtn.closest('.menu');
-
-//             submenu.classList.remove('active');
-
-//             accordionWrapper.classList.remove('submenu-open');
-
-//             document
-//                 .querySelectorAll('.active-parent')
-//                 .forEach(item => item.classList.remove('active-parent'));
-//         });
-//     }
-// });
-
-
+/* header */
 document.addEventListener('DOMContentLoaded', () => {
 
     const menuToggle = document.querySelector('.menu-toggle');
@@ -265,6 +152,42 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.active-parent').forEach(item => {
             item.classList.remove('active-parent');
         });
+    });
+
+});
+
+/* footer */
+jQuery(function ($) {
+
+    function initFooterAccordion() {
+        if ($(window).width() <= 768) {
+
+            $('.footer-column ul, .footer-column .menu').hide();
+
+            $('.footer-column h4')
+                .off('click.footerAccordion')
+                .on('click.footerAccordion', function () {
+
+                    const menu = $(this).next('ul, .menu');
+
+                    if (menu.is(':visible')) {
+                        menu.slideUp();
+                    } else {
+                        $('.footer-column ul, .footer-column .menu').slideUp();
+                        menu.slideDown();
+                    }
+                });
+
+        } else {
+            $('.footer-column h4').off('click.footerAccordion');
+            $('.footer-column ul, .footer-column .menu').show();
+        }
+    }
+
+    initFooterAccordion();
+
+    $(window).on('resize', function () {
+        initFooterAccordion();
     });
 
 });

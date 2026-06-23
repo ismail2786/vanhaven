@@ -10,8 +10,7 @@
 	--vhvg-gap: 12px;
 	background: var(--vhvg-bg);
 	color: var(--vhvg-text);
-	padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
-	box-sizing: border-box;
+	padding: 0;
 }
 
 .vhvg *, .vhvg *::before, .vhvg *::after { box-sizing: border-box; }

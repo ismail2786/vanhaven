@@ -1,4 +1,4 @@
-/* VanHaven Bespoke Solutions — frontend styles */
+/* Bespoke Solutions — Lifestyle Page */
 
 .vhs {
 	--vhs-accent: #F37021;
@@ -7,6 +7,7 @@
 	--vhs-text: #F5F3F3;
 	--vhs-muted: #B5B3B3;
 	--vhs-radius: 6px;
+	padding: 0;
 }
 
 .vhs *, .vhs *::before, .vhs *::after { box-sizing: border-box; }
