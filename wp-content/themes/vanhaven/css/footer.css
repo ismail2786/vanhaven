@@ -78,12 +78,20 @@
     font-weight: 400;
 }
 
+.site-footer #menu-parts-services-1 {
+    margin-bottom: 40px;
+}
+
 @media (max-width: 992px) {
   
     .site-footer .footer-grid {  
         display: flex;
         flex-direction: column;
         gap: 40px;
+    }
+
+    .site-footer #menu-parts-services-1 {
+        margin-bottom: 0;
     }
 }
 

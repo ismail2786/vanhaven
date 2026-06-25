@@ -320,6 +320,10 @@ body.menu-open {
 
 @media (max-width: 992px) {
 
+    .logo img {
+        max-height: 40px;
+    }
+
     .ecommerce-menus {
         display: none;
     }
@@ -332,8 +336,8 @@ body.menu-open {
         display: block;
     }
 
-    .is-mobile .logo {
-        width: 0;
+    .site-header .is-mobile .logo {
+        width: auto;
     }
 
     .is-mobile .vh-header-actions {

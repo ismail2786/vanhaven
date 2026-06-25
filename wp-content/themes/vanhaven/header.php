@@ -130,9 +130,6 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Van Haven Logo">
             </a>
         </div>
-        <!-- <div class="vh-btn-outline">
-            <a href="/contact" class="btn-outline">CONTACT US</a>
-        </div> -->
 
         <div class="ecommerce-menus">
 
@@ -162,26 +159,37 @@
         </div>
         <div class="is-mobile">
             <div class="vh-header-actions">
-
-            <a href="/search" class="vh-action-icon" aria-label="Search">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/search.png">
-            </a>
-
-            <a href="/" class="vh-action-icon" aria-label="Search">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Van Haven Logo">
-            </a>
-
-            <a href="/login" class="vh-action-icon" aria-label="Account">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/user.png">
-            </a>
-
-            <a href="/cart" class="vh-action-icon" aria-label="Cart">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/cart.png">
-            </a>
+                <a href="/search" class="vh-action-icon" aria-label="Search">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/search.png">
+                </a>
+            </div>
+        </div>
+        <div class="is-mobile">
+            <div class="vh-header-actions">
+                <a href="/" class="vh-action-icon logo" aria-label="Logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Van Haven Logo">
+                </a>
+            </div>
+        </div>
+        <div class="is-mobile">
+            <div class="vh-header-actions">
+                <a href="/login" class="vh-action-icon" aria-label="Account">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/user.png">
+                </a>
+            </div>
+        </div>
+        <div class="is-mobile">
+            <div class="vh-header-actions">
+                <a href="/cart" class="vh-action-icon" aria-label="Cart">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/cart.png">
+                </a>
+            </div>
+        </div>
         </div>
     </div>
 </header>
 
+<!-- /* Mobile Sticky Menu */ -->
 <div class="mobile-sticky-menu is-mobile">
     <div class="sticky-menu-wrapper">
         <a href="/login" aria-label="Account">
